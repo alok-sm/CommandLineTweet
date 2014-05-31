@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+beginning = Time.now
+
+require 'twitter'
+require 'twitter_oauth'
+
+#init client
+client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = 'J3Ku3lDOv4lKTuezPvM6IkbAk'
+  config.consumer_secret     = 'akt0qahFc8Tj8IZURTuzpkPXM6afWMDZIp4KLPNStRrKGbuOWv'
+  config.access_token        = '110102010-JJt1V4sV3SnFaZOk4nfRaPlrdOvGIEOn9LLLKxkJ'
+  config.access_token_secret = 'xH5MIjELXFSmY4s1t3XFli2uQk9VbRRgQUt6sjmnGCI1g'
+end
+
+
+if(ARGV[0].nil?)
+	puts "Enter some Arguments" #No argument
+elsif(ARGV[1].nil?)
+	client.update(ARGV[0]) #Only tweet
+elsif(ARGV[2].nil?)
+	client.update_with_media(ARGV[0], File.new(ARGV[1])) #tweet with picture
+else
+	client.update_with_media(
+		ARGV[0], 
+		File.new(ARGV[1]), 
+		:lat => ARGV[2], 
+		:long =>ARGV[3] , 
+		:display_coordinates => true
+	)
+
+end
+
+puts "\nSuccess!\nTweet sent in #{(Time.now - beginning)*1000} ms\n\n"
