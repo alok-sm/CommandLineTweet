@@ -7,10 +7,10 @@ require 'twitter_oauth'
 
 #init client
 client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = 'J3Ku3lDOv4lKTuezPvM6IkbAk'
-  config.consumer_secret     = 'akt0qahFc8Tj8IZURTuzpkPXM6afWMDZIp4KLPNStRrKGbuOWv'
-  config.access_token        = '110102010-JJt1V4sV3SnFaZOk4nfRaPlrdOvGIEOn9LLLKxkJ'
-  config.access_token_secret = 'xH5MIjELXFSmY4s1t3XFli2uQk9VbRRgQUt6sjmnGCI1g'
+  config.consumer_key        = 'XYZ'
+  config.consumer_secret     = 'XYZ'
+  config.access_token        = 'XYZ'
+  config.access_token_secret = 'XYZ'
 end
 
 
